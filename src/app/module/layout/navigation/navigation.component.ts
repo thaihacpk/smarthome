@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/user';
-import { APIService } from 'src/app/API.service';
 import { Router } from '@angular/router';
-import { Auth } from 'aws-amplify';
 
 @Component({
   selector: 'app-navigation',
@@ -10,8 +7,8 @@ import { Auth } from 'aws-amplify';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor() { }
   ngOnInit() {
     var header = document.getElementById("side-menu");
     var btns = header.getElementsByClassName("menu");
@@ -23,7 +20,13 @@ export class NavigationComponent implements OnInit {
       });
     }
   }
-
+  view() {
+    // this.router.navigateByUrl('/home/view');
+    this.router.navigate(['/home/view']);
+  }
+  chart() {
+    this.router.navigate(['/home/chart']);
+  }
 
 }
 

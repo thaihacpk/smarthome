@@ -11,6 +11,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { LoginModule } from './login/login.module';
 import { LayoutModule } from './module/layout/layout.module';
 import { MainViewComponent } from './components/main-view/main-view.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ChartComponent } from './components/chart/chart.component';
 
 
 
@@ -18,7 +20,9 @@ import { MainViewComponent } from './components/main-view/main-view.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MainViewComponent
+    MainViewComponent,
+    DashboardComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
