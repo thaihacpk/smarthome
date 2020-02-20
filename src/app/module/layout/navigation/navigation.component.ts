@@ -22,6 +22,7 @@ export class NavigationComponent implements OnInit {
       });
     }
   }
+
   view() {
     this.router.navigate(['/home/view']);
 

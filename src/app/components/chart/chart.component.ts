@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
-import * as CanvasJS from '../../../assets/canvasjs.min.js';
+
+
+declare var jQuery: any;
 @Component({
   selector: 'app-chart',
   templateUrl: './chart.component.html',
@@ -10,43 +12,53 @@ import * as CanvasJS from '../../../assets/canvasjs.min.js';
 export class ChartComponent implements OnInit {
   constructor() { }
   ngOnInit() {
-    let dataPoints = [];
-    let dpsLength = 0;
-    let chart = new CanvasJS.Chart("chartContainer", {
-      exportEnabled: true,
-      title: {
-        text: "Live Chart with Data-Points from External JSON"
-      },
-      data: [{
-        type: "spline",
-        dataPoints: dataPoints,
-      }]
-    });
-
-    $.getJSON("https://canvasjs.com/services/data/datapoints.php?xstart=1&ystart=25&length=20&type=json&callback=?", function (data) {
-      $.each(data, function (key, value) {
-        dataPoints.push({ x: value[0], y: parseInt(value[1]) });
-      });
-      dpsLength = dataPoints.length;
-      chart.render();
-      updateChart();
-    });
-    function updateChart() {
-      $.getJSON("https://canvasjs.com/services/data/datapoints.php?xstart=" + (dpsLength + 1) + "&ystart=" + (dataPoints[dataPoints.length - 1].y) + "&length=1&type=json&callback=?", function (data) {
-        $.each(data, function (key, value) {
-          dataPoints.push({
-            x: parseInt(value[0]),
-            y: parseInt(value[1])
+    //add your api here below
+    var API_ENDPOINT = "https://ev6stwgdh6.execute-api.us-west-2.amazonaws.com/default/getEnergyTable"
+    // //AJAX GET REQUEST
+    // document.getElementById("saveprofile").onclick = function () {
+    //   var inputData = {
+    //     "empId": $('#empid').val(),
+    //     "empFirstName": $('#fname').val(),
+    //     "empLastName": $('#lname').val(),
+    //     "empAge": $('#empage').val()
+    //   };
+    //   $.ajax({
+    //     url: API_ENDPOINT,
+    //     type: 'POST',
+    //     data: JSON.stringify(inputData),
+    //     contentType: 'application/json; charset=utf-8',
+    //     success: function (response) {
+    //       document.getElementById("profileSaved").innerHTML = "Profile Saved!";
+    //     },
+    //     error: function () {
+    //       alert("error");
+    //     }
+    //   });
+    // }
+    //AJAX GET REQUEST
+    document.getElementById("getprofile").onclick = function () {
+      console.log("asdjaajdaasd");
+      
+      $.ajax({
+        url: API_ENDPOINT,
+        type: 'GET',
+        contentType: 'application/json; charset=utf-8',
+        success: function (response) {
+          $('#employeeProfile tr').slice(1).remove();
+          jQuery.each(response, function (i, data) {
+            $("#employeeProfile").append("<tr> \
+                <td>" + data['Topic'] + "</td> \
+                <td>" + data['Time'] + "</td> \
+                <td>" + data['Payload'] + "</td> \
+                </tr>");
           });
-          dpsLength++;
-        });
-
-        if (dataPoints.length > 20) {
-          dataPoints.shift();
+        },
+        error: function () {
+          alert("error");
         }
-        chart.render();
-        setTimeout(function () { updateChart() }, 1000);
       });
     }
+
   }
+
 }

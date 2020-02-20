@@ -17,9 +17,6 @@ export class LoginPageComponent implements OnInit {
         if (authState.state === 'signedIn') {
           this.router.navigate(['/home']);
           this.router.navigate(["/home/view"]);
-        console.log("Okie!");
-        
-
         }
       });
     
