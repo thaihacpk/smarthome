@@ -1,21 +1,34 @@
-<div id="showProfile">
-    <input type="submit" id="getprofile" value="View all the Energy ">
-    <table id="employeeProfile" style="margin: 50px auto 0; ">
-        <colgroup>
-            <col style="width:20%">
-            <col style="width:20%">
-            <col style="width:20%">
-            <col style="width:20%">
-        </colgroup>
-        <tbody>
-            <tr>
-                <th>Topic</th>
-                <th>Time</th>
-                <th>Payload</th>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<!-- 
+<div id="showEnergy">
+  <table style="width:40%;">
+    <tbody class="energy">
+      <tr>
+        <th>Topic</th>
+        <th>Time</th>
+        <th>Payload</th>
+      </tr>
+      <tr *ngFor="let item of energyList">
+        <th>{{ item.topic }}</th>
+        <th>{{ item.payload.timestamp }}</th>
+        <th>
+          {{
+            "Nhiệt độ : " +
+              item.payload.humidity +
+              " " +
+              "Độ ẩm : " +
+              item.payload.temperature
+          }}
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+<iframe src="https://search-mydashboard-qikkvyoezw4tqzt3kl3qiukmdu.us-west-2.es.amazonaws.com/_plugin/kibana/app/kibana#/visualize/edit/fdb00e00-5782-11ea-bf40-f3d61999e225?embed=true&_g=()&_a=(filters:!(),linked:!f,query:(language:kuery,query:''),uiState:(),vis:(aggs:!((enabled:!t,id:'1',params:(field:humidity),schema:metric,type:avg),(enabled:!t,id:'2',params:(customInterval:'30s',customLabel:'Live+Stream',drop_partials:!f,extended_bounds:(),field:timestamp,interval:custom,min_doc_count:1,timeRange:(from:now-90m,to:now),useNormalizedEsInterval:!t),schema:segment,type:date_histogram)),params:(addLegend:!t,addTimeMarker:!f,addTooltip:!t,categoryAxes:!((id:CategoryAxis-1,labels:(filter:!f,show:!t,truncate:100),position:bottom,scale:(type:linear),show:!t,style:(),title:(),type:category)),grid:(categoryLines:!t),legendPosition:top,seriesParams:!((data:(id:'1',label:'Average+humidity'),drawLinesBetweenPoints:!t,mode:normal,show:true,showCircles:!t,type:line,valueAxis:ValueAxis-1)),times:!(),type:line,valueAxes:!((id:ValueAxis-1,labels:(filter:!f,rotate:0,show:!t,truncate:100),name:LeftAxis-1,position:left,scale:(mode:normal,type:linear),show:!t,style:(),title:(text:'Average+humidity'),type:value))),title:'Live+Stream+Data',type:line))" height="250" width="100%"></iframe>
+<iframe src="https://search-mydashboard-qikkvyoezw4tqzt3kl3qiukmdu.us-west-2.es.amazonaws.com/_plugin/kibana/app/kibana#/visualize/edit/45725890-5785-11ea-bf40-f3d61999e225?embed=true&_g=(refreshInterval:(pause:!t,value:0),time:(from:now%2Fw,to:now%2Fw))&_a=(filters:!(),linked:!f,query:(language:kuery,query:''),uiState:(),vis:(aggs:!((enabled:!t,id:'1',params:(field:humidity),schema:metric,type:avg),(enabled:!t,id:'2',params:(customInterval:'2h',customLabel:'data+by+date',drop_partials:!f,extended_bounds:(),field:timestamp,interval:d,min_doc_count:1,timeRange:(from:now%2Fw,to:now%2Fw),useNormalizedEsInterval:!t),schema:segment,type:date_histogram)),params:(addLegend:!t,addTimeMarker:!f,addTooltip:!t,categoryAxes:!((id:CategoryAxis-1,labels:(show:!t,truncate:100),position:bottom,scale:(type:linear),show:!t,style:(),title:(),type:category)),grid:(categoryLines:!f),legendPosition:top,seriesParams:!((data:(id:'1',label:'Average+humidity'),drawLinesBetweenPoints:!t,mode:normal,show:true,showCircles:!t,type:histogram,valueAxis:ValueAxis-1)),times:!(),type:line,valueAxes:!((id:ValueAxis-1,labels:(filter:!f,rotate:0,show:!t,truncate:100),name:LeftAxis-1,position:left,scale:(mode:normal,type:linear),show:!t,style:(),title:(text:'Average+humidity'),type:value))),title:'Data+by+date',type:line))" height="250" width="100%" class="mt-5"></iframe>
+<!-- <iframe
+  id="chart-custom"
+  src="https://search-mydashboard-qikkvyoezw4tqzt3kl3qiukmdu.us-west-2.es.amazonaws.com/_plugin/kibana/app/kibana#/visualize/edit/16d864e0-5797-11ea-bf40-f3d61999e225?embed=true&_g=(refreshInterval:(pause:!t,value:0),time:(from:now%2Fy,to:now%2Fy))&_a=(filters:!(),linked:!f,query:(language:kuery,query:''),uiState:(),vis:(aggs:!((enabled:!t,id:'1',params:(field:humidity),schema:metric,type:avg),(enabled:!t,id:'2',params:(customInterval:'2h',drop_partials:!f,extended_bounds:(),field:timestamp,interval:M,min_doc_count:1,timeRange:(from:now%2Fy,to:now%2Fy),useNormalizedEsInterval:!t),schema:segment,type:date_histogram)),params:(addLegend:!t,addTimeMarker:!f,addTooltip:!t,categoryAxes:!((id:CategoryAxis-1,labels:(show:!t,truncate:100),position:bottom,scale:(type:linear),show:!t,style:(),title:(),type:category)),grid:(categoryLines:!f),legendPosition:top,seriesParams:!((data:(id:'1',label:'Average+humidity'),drawLinesBetweenPoints:!t,mode:normal,show:true,showCircles:!t,type:histogram,valueAxis:ValueAxis-1)),times:!(),type:line,valueAxes:!((id:ValueAxis-1,labels:(filter:!f,rotate:0,show:!t,truncate:100),name:LeftAxis-1,position:left,scale:(mode:normal,type:linear),show:!t,style:(),title:(text:'Average+humidity'),type:value))),title:'data+by+months',type:line))"
+  height="200"
+  width="100%"
+></iframe> -->
 
-<iframe style="margin-top: 100px;" src="https://search-mydashboard-qikkvyoezw4tqzt3kl3qiukmdu.us-west-2.es.amazonaws.com/_plugin/kibana/app/kibana#/visualize/edit/557f3460-52cb-11ea-bf40-f3d61999e225?embed=true&_g=(refreshInterval:(pause:!t,value:0),time:(from:'2020-02-19T03:47:54.864Z',to:now))&_a=(filters:!(),linked:!f,query:(language:kuery,query:''),uiState:(),vis:(aggs:!((enabled:!t,id:'1',params:(field:humidity),schema:metric,type:avg),(enabled:!t,id:'2',params:(field:temperature),schema:metric,type:avg),(enabled:!t,id:'3',params:(customInterval:'2h',drop_partials:!f,extended_bounds:(),field:timestamp,interval:auto,min_doc_count:1,useNormalizedEsInterval:!t),schema:segment,type:date_histogram)),params:(addLegend:!t,addTimeMarker:!f,addTooltip:!t,categoryAxes:!((id:CategoryAxis-1,labels:(show:!t,truncate:100),position:bottom,scale:(type:linear),show:!t,style:(),title:(),type:category)),grid:(categoryLines:!f),legendPosition:right,seriesParams:!((data:(id:'1',label:'Average+humidity'),drawLinesBetweenPoints:!t,mode:normal,show:true,showCircles:!t,type:line,valueAxis:ValueAxis-1),(data:(id:'2',label:'Average+temperature'),drawLinesBetweenPoints:!t,mode:normal,show:!t,showCircles:!t,type:line,valueAxis:ValueAxis-1)),times:!(),type:line,valueAxes:!((id:ValueAxis-1,labels:(filter:!f,rotate:0,show:!t,truncate:100),name:LeftAxis-1,position:left,scale:(mode:normal,type:linear),show:!t,style:(),title:(text:'Average+humidity'),type:value))),title:DHT11,type:line))"
-    height="600" width="100%"></iframe>

@@ -1,43 +1,69 @@
     @import '~aws-amplify-angular/theme.css';
-    @import "~@aws-amplify/ui/src/Angular.css";
+    /* @import "~@aws-amplify/ui/src/Angular.css"; */
     @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
     /* ****************************************************************** */
+    #welcome_title {
+        font-family: 'Balsamiq Sans', cursive;
+    }
+    #welcome_img {
+        margin-top: 3%;
+    }
     /* LOGIN */
-    
+    .amplify-authenticator {
+        margin:  12% auto;
+    }
     .amplify-form-signup {
         display: none !important;
     }
-    
-    .amplify-container {
-        margin-top: 31% !important;
-    }
-    
     .amplify-form-link {
         cursor: pointer;
         color: var(--color-primary) !important;
     }
     
-    .amplify-form-cell-right {
-        float: right;
-        margin: 5px 135px 0px 0px;
+    /* CHART */
+    #chart-custom filter-bar  {
+    }
+    #showEnergy {
+        margin-top: 45px;
+        display: flex;
+        
+    }
+    #showEnergy table
+    {
+        border: 1px solid #000;
+    }
+  
+    #showEnergy table th{
+        text-align: center;
+    }
+    .energy {
+        height: 200px !important;
     }
     
-    .amplify-form-button {
-        border-radius: 30px 30px 0 0;
-    }
+    
+
     /* ****************************************************************** */
     /* .slideOne + .slideTwo + .slideThree */
-    
-    .imgcontrol {
-        background-image: url("../images/graph.png");
+    .control_shadow {
+        background-image: url("../images/lamp_on_final.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 300px;
+        width: 50%;
+        margin: 0 auto;
+    }
+    /* .imgcontrol {
+        background-image: url("../images/lamp_off_final.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
         margin: 0 auto;
-        height: 200px;
-        width: 40%;
+        height: 300px;
+        width: 100%;
     }
-    
+     */
     h4 {
         text-align: center;
     }
@@ -112,7 +138,7 @@
     
     body {
         font-family: 'Open Sans', sans-serif;
-        background-color: #c9c9c9;
+        background-color: #f3f3f4;
         font-size: 13px;
         color: #676a6c;
         overflow-x: hidden;

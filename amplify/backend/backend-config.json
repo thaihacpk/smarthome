@@ -6,21 +6,7 @@
 			"dependsOn": []
 		}
 	},
-	"api": {
-		"amplifyapp": {
-			"service": "AppSync",
-			"providerPlugin": "awscloudformation",
-			"output": {
-				"authConfig": {
-					"additionalAuthenticationProviders": [],
-					"defaultAuthentication": {
-						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
-						"userPoolConfig": {
-							"userPoolId": "authamplifyapp5f031986"
-						}
-					}
-				}
-			}
-		}
-	}
+	"api": {},
+	"function": {},
+	"storage": {}
 }
