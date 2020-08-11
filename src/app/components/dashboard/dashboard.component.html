@@ -1,13 +1,13 @@
 <div class="row placeholders">
     <div class="col-md-4 col-sm-4 placeholder">
         <div class="device_img mt-3">
-            <div class= "control_shadow"></div>
+            <div class= "control_shadow" [ngClass]="{'shadowOn': shadowItem1,'shadowOff': !shadowItem1}" ></div>
         </div>
 
         <section title=".slideOne">
             <!-- .slideOne -->
             <div class="slideOne">
-                <input type="checkbox" value="None" id="slideOne" name="check" checked />
+                <input #led1 type="checkbox"  id="slideOne" name="check"  [checked]="checkedItem1"  (click)="upShadow1(led1.checked)" />
                 <label for="slideOne"></label>
             </div>
             <!-- end .slideOne -->
@@ -17,12 +17,12 @@
     </div>
     <div class="col-md-4 col-sm-4 placeholder">
         <div class="device_img mt-3">
-            <div class= "control_shadow"></div>
+            <div class= "control_shadow" [ngClass]="{'shadowOn': shadowItem2,'shadowOff': !shadowItem2}"></div>
         </div>
         <section title=".slideTwo">
             <!-- .slideTwo -->
             <div class="slideTwo">
-                <input type="checkbox" value="None" id="slideTwo" name="check" checked />
+                <input #led2 type="checkbox" value="None" id="slideTwo" name="check" [checked]="checkedItem2" (click)="upShadow2(led2.checked)" />
                 <label for="slideTwo"></label>
             </div>
             <!-- end .slideTwo -->
@@ -30,15 +30,38 @@
     </div>
     <div class="col-md-4 col-sm-4 placeholder">
         <div class="device_img mt-3">
-            <div class= "control_shadow"></div>
+            <div class= "control_shadow" [ngClass]="{'shadowOn': shadowItem3,'shadowOff': !shadowItem3}"></div>
         </div>
         <section title=".slideThree">
             <!-- .slideThree -->
             <div class="slideThree">
-                <input type="checkbox" value="None" id="slideThree" name="check" checked />
+                <input #led3 type="checkbox" value="None" id="slideThree" name="check" [checked]="checkedItem3" (click)="upShadow3(led3.checked)"/>
                 <label for="slideThree"></label>
             </div>
             <!-- end .slideThree -->
         </section>
     </div>
 </div>
+<!-- 
+<div class="col-4">
+    <circle-progress
+    [title]= "'Current (A)'"
+    [showUnits] = 'false'
+    [subtitle] = "ad"
+    [subtitleColor] = "'red'"
+    [subtitleFontSize] = '30'
+    [percent]="100"
+    [backgroundColor]= "'#F1F1F1'"
+    [backgroundPadding]= '-18'
+    [radius]= '100'
+    [toFixed]= '2'
+    [outerStrokeWidth]= '10'
+    [outerStrokeColor]= "'#FF6347'"
+    [innerStrokeColor]= "'#32CD32'"
+    [innerStrokeWidth]= '1'
+    [clockwise]= 'false'
+    [startFromZero]= 'false'
+    [maxPercent]='100'
+    [animationDuration] = '1000'
+    ></circle-progress>
+  </div> -->

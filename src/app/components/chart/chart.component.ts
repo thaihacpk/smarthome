@@ -11,22 +11,27 @@ declare var jQuery: any;
 
 export class ChartComponent implements OnInit {
   energyList = [];
-
+  energyItem = [];
+ 
   constructor(private energyService: EnergyService) { }
 
 
   viewEnergy(): void {
     this.energyService.getEngergy().subscribe(res => {
-      console.log(res);
       this.energyList = res;
-    })
+      this.energyItem = res.slice(-1)[0];
+    })  
+  }
+ 
+  ngOnInit() {
+    window.setInterval(()=> {
+      this.energyService.getEngergy().subscribe(res => {
+        this.energyItem = res.slice(-1)[0];
+      })
+    }, 3000);
   }
   
-  ngOnInit() {
-    this.viewEnergy();
-  }
-  // ngDoCheck() {
-  //   this.viewEnergy();
-  // }
+ 
 
 }
+

@@ -15,6 +15,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ChartComponent } from './components/chart/chart.component';
 import { HttpClientModule } from '@angular/common/http';
 
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 
 
@@ -34,7 +35,10 @@ import { HttpClientModule } from '@angular/common/http';
     
     LoginModule,
     LayoutModule,
-    MDBBootstrapModule.forRoot()
+    NgCircleProgressModule.forRoot({
+    }),
+    MDBBootstrapModule.forRoot(),
+    
   ],
   providers: [AmplifyService],
   bootstrap: [AppComponent]

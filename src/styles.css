@@ -42,11 +42,28 @@
     }
     
     
-
+    #logo-iuh {
+        background-image: url("../images/iuh.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 300px;
+        width: 100%;
+        margin: 0 auto;
+    }
     /* ****************************************************************** */
     /* .slideOne + .slideTwo + .slideThree */
-    .control_shadow {
+    .shadowOn{
         background-image: url("../images/lamp_on_final.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 300px;
+        width: 50%;
+        margin: 0 auto;
+    }
+    .shadowOff{
+        background-image: url("../images/lamp_off_final.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
